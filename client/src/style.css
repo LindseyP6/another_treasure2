@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    font-family: 'Poppins';
+}
+
+.header {
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.headerText {
+    position: relative;
+    justify-content: center;
+    color: #F07167;
+    font-weight: bold;
+    margin: auto;
+    font-size: 40px;
+    /* width: 50%; */
+    padding: 10px;
+    text-align: center;
+    background-color: #d9f4fc;
+}
+
+
+.headerPic {
+    height: 50px;
+    width: 50px;
+    justify-content: inline;
+    float: left;
+}
+
+.links {
+    font-size: 20px;
+    padding-left: 10px;
+    text-decoration: none;
+    color: #0081A7;
+
+}
+
+.links:active:after {
+    text-decoration: none;
+    top: 7px;
+    background-color: rgb(250, 245, 222);
+    border: 1px;
+    border-radius: 25px;
+    height: 40px;
+    padding: 0px 10px;
+    color: white;
+    margin: 0px 10px 10px 10px;
+}
+
+.links:hover>span {
+    text-decoration: none;
+    color: white;
+}
+
+.links:hover {
+    background-color: rgb(250, 245, 222);
+    top: 7px;
+    height: 40px;
+    padding: 0px 10px;
+    color: white;
+    border-radius: 20px;
+    margin: 0px 10px 10px 10px;
+}
+
+.links:focus {
+    background-color: rgb(250, 245, 222);
+    top: 7px;
+    height: 40px;
+    padding: 0px 10px;
+    margin: 0px 10px 10px 10px;
+    border-radius: 20px;
+}
+
+.links:visited {
+    color: #0081A7;
+    text-decoration: none;
+}
+.link:visited {
+    color: #0081A7;
+    text-decoration: none;
+}
+.links:focus>span {
+    color: white;
+}
+
+.itemForm {
+    text-align: center;
+    justify-content: center;
+    /* max-width: 500px;
+    max-height: 500px ; */
+}
+
+.loginForm, .itemForm,
+.signUp {
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #0081A7;
+    padding: 20px;
+    margin: 10px;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    max-width: 50%;
+}
+
+.submit {
+    background-color: #0081A7;
+    color: white;
+    border-radius: 10%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.map-container {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.orgHeader {
+    color: #F07167;
+    font-weight: bold;
+    text-align: center;
+}
+.orgDescription{
+    text-align: center;
+    color: #e09f3e;
+}
+
+.cardImages {
+    max-width: 250px;
+    max-height: 300px;
+}
+
+.itemForm {
+    color: #e09f3e;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 40%;
+    justify-content: center;
+    border: 2px solid #0081A7;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    background-color: rgb(255, 252, 239);
+}
+
+/* .orgPage {
+    justify-content: left;
+    text-align: center;
+} */
+
+.orgPageSingle {
+    text-align: center;
+}
+
+.orgContainer {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+        
+}
+
+.itemCards{
+margin: 20px;
+justify-content: center;
+align-content: center;
+text-align: center;
+padding: 10px;
+border-radius: 10%;
+border: 1px dotted #F07167;
+}
+
+.itemContainer{
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: center;
+}
+
+.orgCard{
+    max-width: 380px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    flex-basis: auto;
+}
+
+.mapButton {
+    background-color: transparent;
+    color: blue;
+    font-size: 35px;
+    padding: 0;
+    border-radius: 30%;
+    border: none;
+}
+
+/* MODAL CSS */
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 660px;
+  height: 700px;
+  /* display: inline-block; */
+  border-radius: 20px;
+  background-color: #d1d3d8;
+}
+
+.modal-header, #modal-close {
+  padding: 10px;
+}
+
+#modal-close {
+  border-radius: 10%;
+  margin: 5px;
+  font-weight: bold;
+  background-color: #ecedf2;
+}
+#modal-close:hover {
+  background-color: #95c2c3;
+  font-size: medium;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+.modal-body {
+  padding: 10px;
+}
+
+.modal-close{
+  top: 0;
+  right: 10px;
+}
