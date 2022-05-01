@@ -2,60 +2,48 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
 
-function ItemEditForm({ handleItemUpdate, itemsArray, id, orgArray, itemId, name, description, image, category, organization  }) {
+function ItemEditForm({ handleItemUpdate }) {
  
   const [formState, setFormState] = useState({})
-  // const { id } = useParams();
+  const { id } = useParams();
   const history = useHistory();
-  const [updatedName, setUpdatedName] = useState(name)
-  const [updatedDescription, setUpdatedDescription] = useState(description)
-  const [updatedImage, setUpdatedImage] = useState(image)
+  // const [updatedName, setUpdatedName] = useState(name)
+  // const [updatedDescription, setUpdatedDescription] = useState(description)
+  // const [updatedImage, setUpdatedImage] = useState(image)
 
 
   useEffect(() => {
     fetch(`/items/${id}`)
       .then(res => res.json())
-      .then(data => {
-        setFormState(data);
-      })
+      .then((data) => setFormState(data)); 
   }, [id])
 
   function handleChange(event) {
-    event.preventDefault();
     const { name, value } = event.target;
     setFormState({...formState, [name]: value})
   }
-//   function handleChange(event){
-//       setFormState({
-//     ...formState, [event.target.name]: event.target.value,
-//   });
-// }
 
   function handleSubmit(event) {
     event.preventDefault();
-    const editedItem = {
-      name: updatedName,
-      description: updatedDescription, 
-      image: updatedImage
-    }
-
-    
+    // const editedItem = {
+    //   name: updatedName,
+    //   description: updatedDescription, 
+    //   image: updatedImage
+    // }
 
     fetch(`/items/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(editedItem)
+      body: JSON.stringify(formState)
     })
-      .then(res => res.json())
-      .then(updatedItem => {
-        handleItemUpdate(updatedItem)
-        history.push(`/items`)
-      })
-    }
+    .then(res => res.json())
+    .then(() => handleItemUpdate(id))
+    // history.push(`/items`)
+  }
 
-  // const { name, description, image, category, organization } = formState;
+  const { name, description, image, category, organization } = formState;
 
   return (
     <div className="itemForm">
@@ -69,7 +57,7 @@ function ItemEditForm({ handleItemUpdate, itemsArray, id, orgArray, itemId, name
             type="text"
             name="name"
             defaultValue={name}
-            onChange={(e) => setUpdatedName(e.target.value)}
+            onChange={handleChange}
           />
         </label>
         <br></br>
@@ -80,7 +68,7 @@ function ItemEditForm({ handleItemUpdate, itemsArray, id, orgArray, itemId, name
             type="text"
             name="name"
             defaultValue={description}
-            onChange={(e) => setUpdatedDescription(e.target.value)}
+            onChange={handleChange}
           />
         </label>
         <br></br>
@@ -91,7 +79,7 @@ function ItemEditForm({ handleItemUpdate, itemsArray, id, orgArray, itemId, name
             type="text"
             name="name"
             defaultValue={image}
-            onChange={(e) => setUpdatedImage(e.target.value)}
+            onChange={handleChange}
           />
         </label>
         <br></br>
@@ -126,7 +114,7 @@ function ItemEditForm({ handleItemUpdate, itemsArray, id, orgArray, itemId, name
           ))}
         </select> */}
         <br></br>
-      <button onClick={() => handleItemUpdate(itemId)}>Update</button> 
+      <button>Update</button> 
 
       </form>
     </div>

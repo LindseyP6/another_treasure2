@@ -39,7 +39,7 @@ function MapContainer({ orgArray, mapboxAccessToken}) {
 
   return (
     <div id="map">
-      <p style={{"text-align": "center", "color": "#00AFB9"}}>Click on an point to see an organization's details.</p>
+      <p style={{"textAlign": "center", "color": "#00AFB9"}}>Click on an point to see an organization's details.</p>
     <Map
       className="mapBox"
       {...viewport}

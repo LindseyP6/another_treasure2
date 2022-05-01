@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController
-    skip_before_action :authorized_user, only: [:index, :show]
+    # skip_before_action :authorized_user, only: [:index, :show]
     
     def index
         orgs = Organization.all

@@ -11,13 +11,13 @@ User.create(name:"Jack", telephone:"111-111-1111", email:"jackattack@gmail.com",
 User.create(name:"Jenny", telephone:"111-111-1111", email:"piratejenny@gmail.com", password: "123")
 User.create(name:"Ralph", telephone:"111-111-1111", email:"ralphisbad@gmail.com", password: "123")
 
-Organization.create(name:"New Utrecht Reformed Church", telephone:"(917) 123-2334", address:"1827 84th Street, Brooklyn, NY 11218" , longitude: -74.000430 , latitude: 40.608010, needs:"furniture, toys, books", hours: "Mon - Fri 8-4" )
-Organization.create(name:"The Kensington Family Shelter", telephone:"(718) 226-0425", address:"385 McDonald Ave, Brooklyn, NY 11218" , longitude: -73.979379 , latitude: 40.644562, needs:"toys, books", hours: "Hours: 24/7" )
-Organization.create(name:"Marlboro Senior Center", telephone:"(718) 333-0575", address:"2298 W 8th St, Brooklyn, NY 11223" , longitude: -73.978680 , latitude: 40.591800, needs:"kitchen, clothes", hours: "Mon - Sat 9-6 " )
-Organization.create(name:"CAMBA LGBT services", telephone:"(929) 305-3000", address: "1259 Flatbush Ave, Brooklyn, NY 11226" , longitude: -73.954530, latitude: 40.639760, needs:"clothes, kitchen", hours: "Sun - Sat 7-7" )
-Organization.create(name:"Sunset Park Recreation Center", telephone:"(929) 305-3000", address: "4200 7th Ave, Brooklyn, NY 11232" , longitude: -74.002121, latitude: 40.646931, needs:"furniture", hours: "Mon - Sat 6-9" )
-Organization.create(name:"恩泉華人浸信會 Chinese Saving Grace Baptist Church", telephone:"(917) 857-6524", address: "6822 20th Ave, Brooklyn, NY 11204" , longitude: -73.988310, latitude: 40.614490 , needs:"kitchen, furniture", hours: "Sun - Fri 10-4" )
-Organization.create(name:"Father Young Shelter Services", telephone:"(718) 492-2916", address: "140 58th St, Brooklyn, NY 11220" , longitude: -74.023972, latitude: 40.645538, needs:"toys, clothes", hours: "Hours: 24/7" )
+Organization.create(name:"New Utrecht Reformed Church", telephone:"(917) 123-2334", address:"1827 84th Street, Brooklyn, NY 11218" , longitude: -74.000430 , latitude: 40.608010, needs:"furniture, toys, books", hours: "Mon - Fri 8-4", image: "")
+Organization.create(name:"The Kensington Family Shelter", telephone:"(718) 226-0425", address:"385 McDonald Ave, Brooklyn, NY 11218" , longitude: -73.979379 , latitude: 40.644562, needs:"toys, books", hours: "Hours: 24/7", image: "" )
+Organization.create(name:"Marlboro Senior Center", telephone:"(718) 333-0575", address:"2298 W 8th St, Brooklyn, NY 11223" , longitude: -73.978680 , latitude: 40.591800, needs:"kitchen, clothes", hours: "Mon - Sat 9-6 ", image: "" )
+Organization.create(name:"CAMBA LGBT services", telephone:"(929) 305-3000", address: "1259 Flatbush Ave, Brooklyn, NY 11226" , longitude: -73.954530, latitude: 40.639760, needs:"clothes, kitchen", hours: "Sun - Sat 7-7", image: "" )
+Organization.create(name:"Sunset Park Recreation Center", telephone:"(929) 305-3000", address: "4200 7th Ave, Brooklyn, NY 11232" , longitude: -74.002121, latitude: 40.646931, needs:"furniture", hours: "Mon - Sat 6-9", image: "" )
+Organization.create(name:"恩泉華人浸信會 Chinese Saving Grace Baptist Church", telephone:"(917) 857-6524", address: "6822 20th Ave, Brooklyn, NY 11204" , longitude: -73.988310, latitude: 40.614490 , needs:"kitchen, furniture", hours: "Sun - Fri 10-4", image: "" )
+Organization.create(name:"Father Young Shelter Services", telephone:"(718) 492-2916", address: "140 58th St, Brooklyn, NY 11220" , longitude: -74.023972, latitude: 40.645538, needs:"toys, clothes", hours: "Hours: 24/7", image: "" )
 
 
 Item.create(name: "Dresser", description: "Wooden dresser", image:"https://www.used.forsale/sh-img/137579703_10159798804663475_1364652713289027237_o_solid%2Bwood%2Bdresser.jpg", category: "furniture", user_id: User.all.sample.id, organization_id: Organization.all.sample.id)

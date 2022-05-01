@@ -17,6 +17,7 @@ function App() {
   const [orgArray, setOrgArray] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
+  // const [currentUser, setCurrentUser] = useState({});
   const mapboxAccessToken="pk.eyJ1IjoibGluZHNpc3JhZGQiLCJhIjoiY2wxcWtxMzFzMHFpcDNjb2hkN2l6ajM5ZiJ9.-v98V2229SPrGSzrzMoQUQ";
 
   useEffect(() => {
@@ -25,18 +26,11 @@ function App() {
       .then(setItemsArray)
   }, [])
 
-  // useEffect(() => {
-  //   fetch("/authorized_user")
-  //     .then((res) => {
-  //       if (res.ok) {
-  //         res.json()
-  //           .then((user) => {
-  //             setIsAuthenticated(true);
-  //             setUser(user);
-  //           })
-  //       }
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch("/me")
+      .then((res) => res.json())
+      .then((user) => setUser(user))
+  }, [])
 
   useEffect(() => {
     fetch('/organizations')
@@ -44,17 +38,22 @@ function App() {
       .then(setOrgArray)
   }, [])
 
+  // function handleItemUpdate(changedItem) {
+  //   const changedItems = itemsArray.map(originalItem => {
+  //     if (originalItem === changedItem ){
+  //       return changedItem;
+  //     } else {
+  //       return originalItem;
+  //     }
+  //   })
+  //   setItemsArray(changedItems);
+  // }
 
-
-  function handleItemUpdate(changedItem) {
-    const changedItems = itemsArray.map(originalItem => {
-      if (originalItem === changedItem ){
-        return changedItem;
-      } else {
-        return originalItem;
-      }
-    })
-    setItemsArray(changedItems);
+  function handleItemUpdate(updatedItem) {
+    const updatedItems = itemsArray.map(originalItem => 
+      originalItem.id === updatedItem.id ? updatedItem : originalItem
+      );
+      setItemsArray(updatedItems);
   }
 
   function handleDelete(id) {
@@ -83,7 +82,7 @@ function App() {
 
       <Switch>
         <Route path="/items">
-          {/* <ItemContainer handleDelete={handleDelete}  itemsArray={itemsArray} orgArray={orgArray} /> */}
+          {/* <ItemContainer handleDelete={handleDelete}  itemsArray={itemsArray} orgArray={orgArray} /> */}<h1 style={{"textAlign": "center"}}>Items Donated So Far!</h1>
           <ItemContainer handleDelete={handleDelete} handleItemUpdate={handleItemUpdate} itemsArray={itemsArray} orgArray={orgArray} />
         </Route>
 
@@ -104,9 +103,9 @@ function App() {
           {/* <ItemForm items={itemsArray} orgArray={orgArray} addNewItem={addNewItem} /> */}
         </Route>
 
-        <Route path='/organizations'>
+        {/* <Route path='/organizations'>
           <OrganizationPage orgArray={orgArray} />
-        </Route>
+        </Route> */}
 
         <div id="MapAndMenu">
         <Route exact path="/">

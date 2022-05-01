@@ -11,7 +11,6 @@ function ItemCard({handleDelete, itemsArray, handleItemUpdate, item, id, name, u
  
   return (
     <div className="itemCards">
-
       <h3>{name}</h3>
       <p>{description}</p>
       <img src={image} alt={name} className="cardImages" />
@@ -19,8 +18,7 @@ function ItemCard({handleDelete, itemsArray, handleItemUpdate, item, id, name, u
       <p>{organization}</p>
       <p> Donated by: {user} </p>
       <button onClick={() => handleDelete(id)}>Delete</button> 
-      {/* <div className= "signupButton"> */}
-      <button onClick={toggleSignup}>Update</button> 
+      {/* <button onClick={toggleSignup}>Update</button> 
       {formIsShowing ? <ItemEditForm
            itemsArray={itemsArray} 
            id={id}
@@ -30,7 +28,7 @@ function ItemCard({handleDelete, itemsArray, handleItemUpdate, item, id, name, u
            category={category}
            organization={organization} 
            handleItemUpdate={handleItemUpdate}
-           /> : null}
+           /> : null} */}
     {/* </div> */}
     </div>
   )

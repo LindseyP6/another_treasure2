@@ -17,7 +17,7 @@ function ItemForm({itemsArray, orgArray, addNewItem}) {
             category,
             user, 
             organization,
-            organization_id: organization.id,
+            organization_id: organization.first,
             user_id: user.first, 
             // spot_id: spot_id
         }
@@ -30,13 +30,14 @@ function ItemForm({itemsArray, orgArray, addNewItem}) {
           body: JSON.stringify(newItem),
         })
           .then((response) => response.json())
-          .then(item => console.log("new", item))
-          // .then((data) => onFormSubmit(data));
+          .then((data) => addNewItem(data))
+          .then(item => console.log("new", newItem))
       }
 
   return (
-    <div className="itemForm"> Donate an Item
-    <form onSubmit={handleSubmit} className="signupForm">
+    <div className="itemForm"> 
+    <h1>Donate an Item!</h1>
+    <form onSubmit={handleSubmit}>
     <label>Item Name
     <br></br>
 
